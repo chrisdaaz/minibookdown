@@ -3,7 +3,7 @@
 on:
   push:
     branches: 
-      #- main
+      - main
 
 # Courtesy of _Github actions with R_, available: https://ropenscilabs.github.io/actions_sandbox/
 
@@ -20,7 +20,7 @@ jobs:
       - name: Install rmarkdown
         run: Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
       - name: Render Book
-        run: Rscript -e 'bookdown::render_book("index.Rmd")'
+        run: Rscript -e 'bookdown::render_book("index.md")'
       - uses: actions/upload-artifact@v1
         with:
           name: _book
