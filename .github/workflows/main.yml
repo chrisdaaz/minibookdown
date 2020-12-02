@@ -19,6 +19,8 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Install R Markdown and Bookdown packages
         run: Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
+      - name: Install TinyTeX
+        run: Rscript -e 'tinytex::install_tinytex()'
       - name: Build Book
         run: |
           set -ev
