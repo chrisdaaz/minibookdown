@@ -2,7 +2,8 @@
 title: "A Mini Bookdown"
 author: "Your Name"
 site: bookdown::bookdown_site
-documentclass: book openany
+documentclass: book
+classoption: openany
 ---
 
 # Create your open textbook
