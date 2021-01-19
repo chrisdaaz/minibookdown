@@ -1,0 +1,17 @@
+# Methods for befriending misnamed monsters
+## Where to find creatures
+### At Sea
+At sea you can expect to find the following environments.
+1. Moist
+1. Saturated
+1. Dark
+1. Briny
+1. Saline
+### On Land
+On land you can expect to find the following environments.
+- muggy
+- swampy
+- coastal
+- grasslands
+- foothills
+- mountains
