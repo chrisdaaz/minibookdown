@@ -1,11 +1,11 @@
 ---
-title: "A Mini Bookdown"
+title: "A Mini Bookdown for WK3"
 author: "Nicola Cook"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: openany
 ---
 
-# Create your open textbook
+# Preface
 
-Hello!!
+In this book, we will introduce an interesting method.
