@@ -25,6 +25,12 @@ jobs:
           use-public-rspm: true
 
       - uses: r-lib/actions/setup-renv@v2
+      
+      - name: Install R Markdown and Bookdown packages
+        run: Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
+        
+      - name: Install TinyTeX
+        run: Rscript -e 'tinytex::install_tinytex()'
 
       - name: Cache bookdown results
         uses: actions/cache@v3
@@ -33,10 +39,13 @@ jobs:
           key: bookdown-${{ hashFiles('**/*Rmd') }}
           restore-keys: bookdown-
 
-      - name: Build site
-        run: bookdown::render_book("index.Rmd", quiet = TRUE)
-        shell: Rscript {0}
-
+      - name: Build Book
+        run: |
+          set -ev
+          Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+          Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
+          Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::epub_book')"
+          
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4.4.1
